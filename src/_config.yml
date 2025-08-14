@@ -1,0 +1,35 @@
+# Site temel ayarları
+title: ásko
+description: "ásko loves you"
+baseurl: "" # GitHub sayfan için genellikle boş bırakılır
+url: "https://askoposs.github.io" # kendi GitHub kullanıcı adını değiştir
+theme: minima # veya kendi custom tema
+
+# Yazar bilgileri
+author:
+  name: ásko
+  email: "askoposs@aol.com"
+  github: "askoposs"
+
+# Sosyal medya (isteğe bağlı)
+social:
+  github: "https://github.com/askoposs"
+  linkedin: "https://instagram.com/vaykafir"
+  twitter: "https://twitter.com/vaykafir"
+
+# Jekyll ayarları
+markdown: kramdown
+highlighter: rouge
+paginate: 5 # sayfa başına blog gönderisi
+theme: minima
+exclude:
+  - node_modules
+  - vendor
+  - README.md
+
+# Renk paleti (opsiyonel, CSS ile birlikte kullanılabilir)
+colors:
+  background: "#0f0b14"
+  primary: "#8b5cf6"
+  secondary: "#7c3aed"
+  text: "#ffffff"
