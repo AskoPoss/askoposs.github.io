@@ -1,22 +1,48 @@
-const posts = [
-    {
-        title: "Metin Şifreleme",
-        content: "Verilen bir kelimeyi şifreleme ve şifreli olarak verilen bir kelimeyi veya cümleyi şifrelemeye yarayan basit, web üzerinde çalışan bir araçtır. Kendi içinde şifreler ve şifreleri çözer."
-    },
-    {
-        title: "Diğer Projeler",
-        content: "Öbür projelerim etik olmayan hak ihlalleri sebebiyet vereceğinden dolayı kendimce görünmez kılınmıştır."
+const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let stars = [];
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    for (let i = 0; i < 100; i++) {
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 2,
+            speed: Math.random() * 0.5 + 0.1
+        });
     }
-];
 
-function renderPosts() {
-    const postsContainer = document.getElementById('posts');
-    posts.forEach(post => {
-        const postDiv = document.createElement('div');
-        postDiv.classList.add('post');
-        postDiv.innerHTML = `<h3>${post.title}</h3><p>${post.content}</p>`;
-        postsContainer.appendChild(postDiv);
+    function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "white";
+        stars.forEach(star => {
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+            ctx.fill();
+        });
+    }
+
+    function moveStars() {
+        stars.forEach(star => {
+            star.y += star.speed;
+            if (star.y > canvas.height) {
+                star.y = 0;
+                star.x = Math.random() * canvas.width;
+            }
+        });
+    }
+
+    function animateStars() {
+        drawStars();
+        moveStars();
+        requestAnimationFrame(animateStars);
+    }
+
+    animateStars();
+
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
     });
-}
-
-window.onload = renderPosts;
