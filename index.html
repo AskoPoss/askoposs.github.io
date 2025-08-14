@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ásko Blog</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+    <!-- Sayfa Başlığı -->
+    <title>Asko | Kişisel Blog</title>
+
+    <!-- Açıklama -->
+    <meta name="description" content="asko be akuma">
+    <meta name="keywords" content="askoposs, asko, asko loves you, asko be akuma">
+    <meta name="author" content="ásko">
+
+    <!-- Open Graph (Facebook, LinkedIn vb.) -->
+    <meta property="og:title" content="ásko">
+    <meta property="og:description" content="asko loves you">
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1837742016249098240/-3bizVMC_400x400.jpg"> <!-- Logonun URL'si -->
+    <meta property="og:url" content="https://askoposs@github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="tr_TR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="ásko">
+    <meta name="twitter:description" content="asko loves you">
+    <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/1837742016249098240/-3bizVMC_400x400.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://pbs.twimg.com/profile_images/1837742016249098240/-3bizVMC_400x400.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://pbs.twimg.com/profile_images/1837742016249098240/-3bizVMC_400x400.jpg">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <img src="https://pbs.twimg.com/profile_images/1837742016249098240/-3bizVMC_400x400.jpg" alt="ásko Logo">
-            </div>
-            <h1>ásko</h1>
-        </header>
+<canvas id="stars"></canvas>
 
-        <main>
-            <section class="hakkimda">
-                <h2>Hakkımda</h2>
-                <p>Merhaba, ben ásko. Burada yazılım, projeler ve kişisel notlarımı paylaşıyorum.</p>
-            </section>
-
-            <section class="blog">
-                <h2>Projelerim</h2>
-                <div id="posts"></div>
-            </section>
-        </main>
-
-        <footer>
+  <div class="container">
+    <div class="card">
+      <img src="https://pbs.twimg.com/profile_images/1837742016249098240/-3bizVMC_400x400.jpg" alt="ásko Logo" class="logo">
+      <h1>ásko</h1>
+      <p class="about">Merhaba! Ben ásko. Kendi projelerimi ve çalışmalarımı burada paylaşıyorum.</p>
+      
+      <div class="projects">
+        <h2>Projelerim</h2>
+        <div class="project-buttons">
+          <button onclick="openProject('src/sozluk.html')">Şifreli Mesaj Uygulaması</button>
+          <button onclick="openProject('#')">Spor Salonu Otomasyonu</button>
+        </div>
+      </div>
+      <footer>
             <p>© 2025 ásko. Tüm hakları saklıdır.</p>
         </footer>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+
+    </div>
+  <script src="script.js"></script>
 </body>
 </html>
+
